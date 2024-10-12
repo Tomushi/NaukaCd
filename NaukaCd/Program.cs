@@ -1,6 +1,7 @@
 ﻿using System;
 
 namespace cosik;
+
 {
 class Program
 {
