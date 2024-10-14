@@ -17,7 +17,7 @@ namespace Operatory;
             Console.WriteLine("Dzisiaj jest :" + DateTime.Now.ToShortDateString());
             
             Console.WriteLine("Wiec do zobaczenia jutro " + DateTime.Now + DateTime.Now.AddDays(1).ToShortDateString());
-            
-            Console.WriteLine("Czesc!")
+
+            Console.WriteLine("Czesc!");
         }
     }
