@@ -8,16 +8,13 @@ namespace Operatory;
         {
             Console.WriteLine("Czesc Operatorzy");
 
-            Console.WriteLine("Na dzis koniec jutro ciag dalszy");
-
-            Console.WriteLine("Dzisiejsze zajecia byly bardzo ciekawe");
+        int a = 5;
         
-            Console.WriteLine("Jak jest dzisiejsza data?");
-            
-            Console.WriteLine("Dzisiaj jest :" + DateTime.Now.ToShortDateString());
-            
-            Console.WriteLine("Wiec do zobaczenia jutro " + DateTime.Now + DateTime.Now.AddDays(1).ToShortDateString());
+        int b = 8;
 
-            Console.WriteLine("Czesc!");
-        }
+        int wynik = b % a;
+
+        Console.WriteLine(wynik);
+
+    }
     }
