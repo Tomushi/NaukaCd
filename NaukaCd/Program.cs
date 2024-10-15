@@ -9,13 +9,13 @@ namespace Operatory;
         Console.WriteLine("Podaj liczbę:");
         int liczba = int.Parse(Console.ReadLine());
 
-        if (liczba % 2 == 0)
+        if (liczba < 0)
         {
-            Console.WriteLine(liczba + " jest liczbą parzystą.");
+            Console.WriteLine(liczba + " jest liczbą ujemna.");
         }
         else
         {
-            Console.WriteLine(liczba + " jest liczbą nieparzystą.");
+            Console.WriteLine(liczba + " jest liczbą dodatnia");
         }
     }
 }
