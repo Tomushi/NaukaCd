@@ -6,19 +6,20 @@ namespace Operatory;
     {
     static void Main(string[] args)
         {
-            Console.WriteLine("Czesc Operatorzy");
+        Console.WriteLine("Czesc Operatorzy");
+        
+        Console.WriteLine("Podaj liczbe wieksza od 14 i mniejsza od 16");
+        
+        string liczba = Console.ReadLine();
+        
+        int a = int.Parse(liczba);
 
-            int a = 5;
-
-            int b = 5;
-
-            if (a == b)
+        Console.WriteLine("Teraz wykonam skomplikowane obliczenia do ustalenia parzystosci kwantowej");
+        
+        if (a >= 14 && a <= 16)
             {
-                Console.WriteLine(a + " i " + b + " sa rowne");
+                Console.WriteLine(a + " to liczba nieparzysta");
             }
-            else
-            {
-                Console.WriteLine(a + " i " + b + " nie sa rowne");
-            }
+
         }
     }
