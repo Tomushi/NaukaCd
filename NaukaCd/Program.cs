@@ -1,21 +1,28 @@
 ﻿using System;
 
-namespace Operatory;
+namespace Operatory;   
+class Program
 
-    class Program
-    {
+{
     static void Main(string[] args)
     {
-        Console.WriteLine("Podaj liczbę:");
-        int liczba = int.Parse(Console.ReadLine());
+        Console.WriteLine("Podaj swoja date urodzenia:");
+        string input = Console.ReadLine();
+        int rokUrodzenia;
+        
+        if (!int.TryParse(input, out rokUrodzenia));
 
-        if (liczba < 0)
+        int currentYear = DateTime.Now.Year;
+        int wiek = currentYear - rokUrodzenia;
+
+        if (wiek >= 18)
+
         {
-            Console.WriteLine(liczba + " jest liczbą ujemna.");
+            Console.WriteLine("Osoba pełnoletnia moze sie ubiegac o fotel prezydenta.");
         }
         else
         {
-            Console.WriteLine(liczba + " jest liczbą dodatnia");
+            Console.WriteLine("Osoba jest niepelnoletnia.");
         }
     }
 }
