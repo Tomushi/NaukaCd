@@ -1,28 +1,25 @@
 ﻿using System;
 
-namespace Operatory;   
+namespace Operatory;
 class Program
 
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Podaj swoja date urodzenia:");
-        string input = Console.ReadLine();
-        int rokUrodzenia;
-        
-        if (!int.TryParse(input, out rokUrodzenia));
+        Console.WriteLine("Ile masz wzrostu?");
+        int wzrost = int.Parse(Console.ReadLine());
 
-        int currentYear = DateTime.Now.Year;
-        int wiek = currentYear - rokUrodzenia;
-
-        if (wiek >= 18)
-
+        if (wzrost < 150)
         {
-            Console.WriteLine("Osoba pełnoletnia moze sie ubiegac o fotel prezydenta.");
+            Console.WriteLine("Jesteś krasnoludem");
+        }
+        else if (wzrost < 180)
+        {
+            Console.WriteLine("Jesteś średniego wzrostu");
         }
         else
         {
-            Console.WriteLine("Osoba jest niepelnoletnia.");
+            Console.WriteLine("Jesteś wysoki");
         }
     }
 }
