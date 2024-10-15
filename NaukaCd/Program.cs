@@ -10,15 +10,15 @@ namespace Operatory;
 
             int a = 5;
 
-            int b = 8;
+            int b = 5;
 
             if (a == b)
             {
-                Console.WriteLine("a jest rowne b");
+                Console.WriteLine(a + " i " + b + " sa rowne");
             }
             else
             {
-                Console.WriteLine("a nie jest rowne b");
+                Console.WriteLine(a + " i " + b + " nie sa rowne");
             }
         }
     }
