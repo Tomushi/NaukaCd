@@ -7,22 +7,24 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Oceny");
+        Console.WriteLine("Dni tygodnia");
 
-        Console.WriteLine("Podaj cyfre. Wybierz od 1 do 6. Zamienie to na forme opisowa");
-    
-        int ocena = int.Parse(Console.ReadLine());
+        Console.WriteLine("Podaj cyfre. Zobacze jaki to dzien");
 
-        string ocenaOpisowa = ocena switch
+        int numerDnia = int.Parse(Console.ReadLine());
+
+        string dzienTygodnia = (numerDnia) switch
         {
-            1 => "Niedostateczny",
-            2 => "Dopuszczajacy",
-            3 => "Dostateczny",
-            4 => "Dobry",
-            5 => "Bardzo dobry",
-            6 => "Celujacy",
-            _ => "Nie ma takiej oceny",
+            1 => "Poniedzialek",
+            2 => "Wtorek",
+            3 => "Sroda",
+            4 => "Czwartek",
+            5 => "Piatek",
+            6 => "Sobota",
+            7 => "Niedziela",
+            _ => "Nie ma takiego dnia",
         };
-        Console.WriteLine($"{ocenaOpisowa}");
+
+        Console.WriteLine(dzienTygodnia);
     }
 }
