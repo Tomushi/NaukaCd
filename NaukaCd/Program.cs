@@ -7,43 +7,29 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Narodowy pomiar temperatury");
+        Console.WriteLine("Czy mozna stworzyc trojkat?");
         
-        Console.WriteLine("Podaj czlowieku ile masz stopni za oknem? ");
+        Console.WriteLine("Podaj trzy liczby potrzebne do jego stworzenia");
+
+        Console.WriteLine("Podaj pierwsza liczbe");
         
-        int temp = int.Parse(Console.ReadLine());
-
-        if (temp < 0)
+        int a = Convert.ToInt32(Console.ReadLine());
+        
+        Console.WriteLine("Podaj druga liczbe");
+        
+        int b = Convert.ToInt32(Console.ReadLine());
+        
+        Console.WriteLine("Podaj trzecia liczbe");
+        
+        int c = Convert.ToInt32(Console.ReadLine());
+        
+        if (a + b > c && a + c > b && b + c > a)
         {
-            Console.WriteLine("Cholernie pizdzi");
+            Console.WriteLine("Mozna stworzyc trojkat");
         }
-        else if (temp >= 0 && temp < 10)
+        else
         {
-            Console.WriteLine("zimno");
-        }
-        else if (temp >= 10 && temp < 20)
-        {
-            Console.WriteLine("chlodno");
-        }
-        else if (temp >= 20 && temp < 30)
-        {
-            Console.WriteLine("w sam raz");
-        }
-        else if (temp >= 30 && temp < 40)
-        {
-            Console.WriteLine("zaczyna byc nie ciekawie, bo goraco");
-        }
-        else if (temp >= 40 && temp < 50)
-        {
-            Console.WriteLine("pakuje sie na Alaske");
-        }
-        else if (temp >= 50)
-        {
-            Console.WriteLine("jestes w piekle");
-        }
-
-        {
-            Console.WriteLine("Spadam ...");
+            Console.WriteLine("Nie mozna stworzyc trojkata");
         }
     }
 }
