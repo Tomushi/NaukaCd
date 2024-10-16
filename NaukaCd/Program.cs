@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 
 namespace Operatory;
 class Program
@@ -6,20 +7,28 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Ile masz wzrostu?");
-        int wzrost = int.Parse(Console.ReadLine());
+        Console.WriteLine("Podaj swoje wyniki z matury z poszczegolnych przedmiotow.");
+        
+        Console.WriteLine("Podaj wynik z Matematyki: ");
+        
+        int mat = int.Parse(Console.ReadLine());
 
-        if (wzrost < 150)
+        Console.WriteLine("Podaj wynik z Fizyki: ");
+
+        int fiz = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Podaj wynik z Chemii: ");
+
+        int chem = int.Parse(Console.ReadLine());
+
+        if ((mat >= 70 && fiz >= 55 && chem >= 45) || mat + fiz >= 150 || mat + chem >= 150)
         {
-            Console.WriteLine("Jesteś krasnoludem");
-        }
-        else if (wzrost < 180)
-        {
-            Console.WriteLine("Jesteś średniego wzrostu");
+            Console.WriteLine("Gratulacje, zostales przyjety na studia!");
         }
         else
         {
-            Console.WriteLine("Jesteś wysoki");
+            Console.WriteLine("Niestety, nie zostales przyjety na studia.");
         }
+
     }
 }
