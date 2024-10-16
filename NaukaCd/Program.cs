@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Data;
 
 namespace Operatory;
@@ -7,24 +8,48 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Dni tygodnia");
+        Console.WriteLine("Kalkulator");
 
-        Console.WriteLine("Podaj cyfre. Zobacze jaki to dzien");
+        Console.WriteLine("Podaj pierwsza liczbe :");
 
-        int numerDnia = int.Parse(Console.ReadLine());
+        int a = int.Parse(Console.ReadLine());
 
-        string dzienTygodnia = (numerDnia) switch
+        Console.WriteLine("Podaj druga liczbe :");
+
+        int b = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Teraz wybierz numer operacji.");
+
+        Console.WriteLine("1. Dodawanie");
+
+        Console.WriteLine("2. Odejmowanie");
+
+        Console.WriteLine("3. Mnozenie");
+
+        Console.WriteLine("4. Dzielenie");
+
+        int operacja = int.Parse(Console.ReadLine());
+
+        switch (operacja)
         {
-            1 => "Poniedzialek",
-            2 => "Wtorek",
-            3 => "Sroda",
-            4 => "Czwartek",
-            5 => "Piatek",
-            6 => "Sobota",
-            7 => "Niedziela",
-            _ => "Nie ma takiego dnia",
-        };
+            case 1:
+                Console.WriteLine("Wynik to : " + (a + b));
+                break;
+            case 2:
+                Console.WriteLine("Wynik to : " + (a - b));
+                break;
+            case 3:
+                Console.WriteLine("Wynik to : " + (a * b));
+                break;
+            case 4:
+                Console.WriteLine("Wynik to : " + (a / b));
+                break;
+            default:
+                Console.WriteLine("Nie ma takiej operacji");
+                break;
+        }
+        
+        Console.WriteLine("Dzieki za wspolne liczenie :)");
 
-        Console.WriteLine(dzienTygodnia);
     }
 }
