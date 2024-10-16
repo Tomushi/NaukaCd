@@ -7,28 +7,43 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Podaj swoje wyniki z matury z poszczegolnych przedmiotow.");
+        Console.WriteLine("Narodowy pomiar temperatury");
         
-        Console.WriteLine("Podaj wynik z Matematyki: ");
+        Console.WriteLine("Podaj czlowieku ile masz stopni za oknem? ");
         
-        int mat = int.Parse(Console.ReadLine());
+        int temp = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Podaj wynik z Fizyki: ");
-
-        int fiz = int.Parse(Console.ReadLine());
-
-        Console.WriteLine("Podaj wynik z Chemii: ");
-
-        int chem = int.Parse(Console.ReadLine());
-
-        if ((mat >= 70 && fiz >= 55 && chem >= 45) || mat + fiz >= 150 || mat + chem >= 150)
+        if (temp < 0)
         {
-            Console.WriteLine("Gratulacje, zostales przyjety na studia!");
+            Console.WriteLine("Cholernie pizdzi");
         }
-        else
+        else if (temp >= 0 && temp < 10)
         {
-            Console.WriteLine("Niestety, nie zostales przyjety na studia.");
+            Console.WriteLine("zimno");
+        }
+        else if (temp >= 10 && temp < 20)
+        {
+            Console.WriteLine("chlodno");
+        }
+        else if (temp >= 20 && temp < 30)
+        {
+            Console.WriteLine("w sam raz");
+        }
+        else if (temp >= 30 && temp < 40)
+        {
+            Console.WriteLine("zaczyna byc nie ciekawie, bo goraco");
+        }
+        else if (temp >= 40 && temp < 50)
+        {
+            Console.WriteLine("pakuje sie na Alaske");
+        }
+        else if (temp >= 50)
+        {
+            Console.WriteLine("jestes w piekle");
         }
 
+        {
+            Console.WriteLine("Spadam ...");
+        }
     }
 }
