@@ -7,29 +7,22 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Czy mozna stworzyc trojkat?");
-        
-        Console.WriteLine("Podaj trzy liczby potrzebne do jego stworzenia");
+        Console.WriteLine("Oceny");
 
-        Console.WriteLine("Podaj pierwsza liczbe");
-        
-        int a = Convert.ToInt32(Console.ReadLine());
-        
-        Console.WriteLine("Podaj druga liczbe");
-        
-        int b = Convert.ToInt32(Console.ReadLine());
-        
-        Console.WriteLine("Podaj trzecia liczbe");
-        
-        int c = Convert.ToInt32(Console.ReadLine());
-        
-        if (a + b > c && a + c > b && b + c > a)
+        Console.WriteLine("Podaj cyfre. Wybierz od 1 do 6. Zamienie to na forme opisowa");
+    
+        int ocena = int.Parse(Console.ReadLine());
+
+        string ocenaOpisowa = ocena switch
         {
-            Console.WriteLine("Mozna stworzyc trojkat");
-        }
-        else
-        {
-            Console.WriteLine("Nie mozna stworzyc trojkata");
-        }
+            1 => "Niedostateczny",
+            2 => "Dopuszczajacy",
+            3 => "Dostateczny",
+            4 => "Dobry",
+            5 => "Bardzo dobry",
+            6 => "Celujacy",
+            _ => "Nie ma takiej oceny",
+        };
+        Console.WriteLine($"{ocenaOpisowa}");
     }
 }
