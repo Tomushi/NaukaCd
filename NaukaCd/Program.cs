@@ -2,27 +2,18 @@
 using System;
 using System.Data;
 
-namespace Piramida;
+namespace Potega;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Podaj liczbe calkowita");
+        Console.WriteLine("Oto liczby i ich 3 potęga:");
 
-        int n = int.Parse(Console.ReadLine());
-
-        int number = 1;
-
-        for (int i = 1; i <= n; i++)
+        for (int i = 1; i <= 20; i++)
         {
-            for (int j = 1; j <= i; j++)
-            {
-                Console.Write(number);
-                number++;
-            }
-
-            Console.WriteLine();
+            int potega = (int)Math.Pow(i, 3);
+            Console.WriteLine($"{i}^3 = {potega}");
         }
-    }
+    }   
 }
