@@ -2,26 +2,27 @@
 using System;
 using System.Data;
 
-namespace Petle;
+namespace Piramida;
 
 class Program
 {
     static void Main(string[] args)
     {
-        int liczbyParzyste = 0;
+        Console.WriteLine("Podaj liczbe calkowita");
 
-        Console.WriteLine("Liczby parzyste z zakresu od 1 d 1000 to: ");
+        int n = int.Parse(Console.ReadLine());
 
-        do
+        int number = 1;
+
+        for (int i = 1; i <= n; i++)
         {
-            if (liczbyParzyste % 2 == 0)
+            for (int j = 1; j <= i; j++)
             {
-                Console.WriteLine(liczbyParzyste);
+                Console.Write(number);
+                number++;
             }
-            liczbyParzyste++;
-        } while (liczbyParzyste <= 1000);
 
-        Console.WriteLine("Ilosc liczb parzystych wynosi: " + liczbyParzyste);
-        Console.WriteLine("Dziekuje za uwage.");
+            Console.WriteLine();
+        }
     }
 }
