@@ -8,28 +8,20 @@ class Program
 {
     static void Main(string[] args)
     {
-        int liczbaPierwszych = 0;
+        int liczbyParzyste = 0;
 
-        for (int liczba = 2; liczba <= 150; liczba++)
+        Console.WriteLine("Liczby parzyste z zakresu od 1 d 1000 to: ");
+
+        do
         {
-            bool czyPierwsza = true;
-
-            for (int i = 2; i <= Math.Sqrt(liczba); i++)
+            if (liczbyParzyste % 2 == 0)
             {
-                if (liczba % i == 0)
-                {
-                    czyPierwsza = false;
-                    break;
-                }
+                Console.WriteLine(liczbyParzyste);
             }
+            liczbyParzyste++;
+        } while (liczbyParzyste <= 1000);
 
-            if (czyPierwsza)
-            {
-                liczbaPierwszych++;
-                Console.WriteLine(liczba + " jest liczbą pierwszą.");
-            }
-        }
-
-        Console.WriteLine("Liczba liczb pierwszych w zakresie 0 - 100: " + liczbaPierwszych);
+        Console.WriteLine("Ilosc liczb parzystych wynosi: " + liczbyParzyste);
+        Console.WriteLine("Dziekuje za uwage.");
     }
 }
