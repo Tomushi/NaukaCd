@@ -2,29 +2,22 @@
 using System;
 using System.Data;
 
-namespace Diament;
+namespace binaria;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Rysujemy diament");
-        Console.WriteLine("Podaj wysokość diamentu: ");
+        Console.WriteLine("Podaj liczbe dziesietna do zamiany na binarna:");
         string? input = Console.ReadLine();
-        if (input == null || !int.TryParse(input, out int wysokosc) || wysokosc <= 0 || wysokosc % 2 == 0)
+
+        if (input == null || !int.TryParse(input, out int liczbaDziesietna))
         {
-            Console.WriteLine("Popelniles blad, musisz podac liczbe dodatnia nieparzysta.");
+            Console.WriteLine("Zle dane, nie dawaj przecinkow ani kropek");
             return;
         }
 
-        int srodek = wysokosc / 2;
-        for (int i = 0; i < wysokosc; i++)
-        {
-            int spacje = Math.Abs(srodek - i);
-            int gwiazdki = wysokosc - 2 * spacje;
-
-            Console.Write(new string(' ', spacje));
-            Console.WriteLine(new string('*', gwiazdki));
-        }
+        string liczbaBinarna = Convert.ToString(liczbaDziesietna, 2);
+        Console.WriteLine("Liczba binarna: " + liczbaBinarna);
     }
 }
