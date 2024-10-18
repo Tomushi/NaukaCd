@@ -2,22 +2,29 @@
 using System;
 using System.Data;
 
-namespace Ulamki;
+namespace Diament;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Suma wg wzoru");
-
-        double suma = 1.0;
-
-        for (int i = 1; i <= 20; i++)
+        Console.WriteLine("Rysujemy diament");
+        Console.WriteLine("Podaj wysokość diamentu: ");
+        string? input = Console.ReadLine();
+        if (input == null || !int.TryParse(input, out int wysokosc) || wysokosc <= 0 || wysokosc % 2 == 0)
         {
-            suma += 1.0 / i;
+            Console.WriteLine("Popelniles blad, musisz podac liczbe dodatnia nieparzysta.");
+            return;
         }
 
-        Console.WriteLine("Suma dla liczb od 0 do 20: " + suma);
-    }   
+        int srodek = wysokosc / 2;
+        for (int i = 0; i < wysokosc; i++)
+        {
+            int spacje = Math.Abs(srodek - i);
+            int gwiazdki = wysokosc - 2 * spacje;
 
+            Console.Write(new string(' ', spacje));
+            Console.WriteLine(new string('*', gwiazdki));
+        }
+    }
 }
