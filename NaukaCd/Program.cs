@@ -2,18 +2,22 @@
 using System;
 using System.Data;
 
-namespace Potega;
+namespace Ulamki;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Oto liczby i ich 3 potęga:");
+        Console.WriteLine("Suma wg wzoru");
+
+        double suma = 1.0;
 
         for (int i = 1; i <= 20; i++)
         {
-            int potega = (int)Math.Pow(i, 3);
-            Console.WriteLine($"{i}^3 = {potega}");
+            suma += 1.0 / i;
         }
+
+        Console.WriteLine("Suma dla liczb od 0 do 20: " + suma);
     }   
+
 }
