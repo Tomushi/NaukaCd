@@ -10,37 +10,28 @@ class Program
     {
         Console.WriteLine("Podaj pierwszą liczbę:");
         string? input1 = Console.ReadLine();
-        if (input1 == null || !int.TryParse(input1, out int liczba1))
-        {
-            Console.WriteLine("Nieprawidłowe dane wejściowe.");
-            return;
-        }
-
+        int.TryParse(input1, out int liczba1);
+        
         Console.WriteLine("Podaj drugą liczbę:");
         string? input2 = Console.ReadLine();
-        if (input2 == null || !int.TryParse(input2, out int liczba2))
-        {
-            Console.WriteLine("Nieprawidłowe dane wejściowe.");
-            return;
-        }
+        int.TryParse(input2, out int liczba2);
+        
+        int dodawanie = liczba1 + liczba2;
+        Console.WriteLine($"Wynik dodawania: {dodawanie}");
 
-        int nww = NajmniejszaWspolnaWielokrotnosc(liczba1, liczba2);
-        Console.WriteLine("Najmniejsza wspólna wielokrotność: " + nww);
+        int odejmowanie = liczba1 - liczba2;
+        Console.WriteLine($"Wynik odejmowania: {odejmowanie}");
+
+        int mnozenie = liczba1 * liczba2;
+        Console.WriteLine($"Wynik mnozenia: {mnozenie}");
+
+        double dzielenie = (double)liczba1 / liczba2;
+        Console.WriteLine($"Wynik dzielenia: {dzielenie}");
+
+        int modulo = liczba1 % liczba2;
+        Console.WriteLine($"Wynik modulo czyli reszta z dzielenie: {modulo}");
+                
     }
 
-    static int NajmniejszaWspolnaWielokrotnosc(int a, int b)
-    {
-        return Math.Abs(a * b) / NajwiekszyWspolnyDzielnik(a, b);
-    }
-
-    static int NajwiekszyWspolnyDzielnik(int a, int b)
-    {
-        while (b != 0)
-        {
-            int temp = b;
-            b = a % b;
-            a = temp;
-        }
-        return a;
-    }
+    
 }
