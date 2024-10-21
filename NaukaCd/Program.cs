@@ -2,35 +2,39 @@
 using System;
 using System.Data;
 
-namespace wielokrotnosc;
+namespace cwiczenia;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Podaj pierwszą liczbę:");
+        Console.WriteLine("Obliczamy pole i obwod prostokata");
+        Console.WriteLine("Podaj pierwszy bok:");
+        
         string? input1 = Console.ReadLine();
-        int.TryParse(input1, out int liczba1);
+        int.TryParse(input1, out int bok1);
         
-        Console.WriteLine("Podaj drugą liczbę:");
+        Console.WriteLine("Podaj drugi bok:");
+        
         string? input2 = Console.ReadLine();
-        int.TryParse(input2, out int liczba2);
-        
-        int dodawanie = liczba1 + liczba2;
-        Console.WriteLine($"Wynik dodawania: {dodawanie}");
+        int.TryParse(input2, out int bok2);
 
-        int odejmowanie = liczba1 - liczba2;
-        Console.WriteLine($"Wynik odejmowania: {odejmowanie}");
+        if(bok1 > 0 && bok2 > 0)
+            {
+            int pole = bok1 * bok2;
+            Console.WriteLine($"Pole prostokata: {pole}");
 
-        int mnozenie = liczba1 * liczba2;
-        Console.WriteLine($"Wynik mnozenia: {mnozenie}");
+            int obw = (bok1 + bok2) * 2;
 
-        double dzielenie = (double)liczba1 / liczba2;
-        Console.WriteLine($"Wynik dzielenia: {dzielenie}");
+            Console.WriteLine($"Obwod prostokada wynosi: " + obw);
 
-        int modulo = liczba1 % liczba2;
-        Console.WriteLine($"Wynik modulo czyli reszta z dzielenie: {modulo}");
-                
+            }
+
+        else
+            {
+            Console.WriteLine("Liczba powinna byc dodatnia");
+            }
+                             
     }
 
     
