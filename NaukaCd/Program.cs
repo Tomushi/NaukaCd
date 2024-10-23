@@ -29,34 +29,34 @@ class Program
 
             Console.WriteLine("3. Mnozenie");
 
-            Console.WriteLine("4. Dzielenie");
+            Console.WriteLine("4. Dzielenie");           
 
-            Console.WriteLine("5. Sprobuj inna operacje");
-
-            Console.WriteLine("6. Wyjscie");
+            Console.WriteLine("5. Wyjscie");
 
             string? dzialanie = Console.ReadLine();
-
-            int wynik = 0;
-
+                        
             if (dzialanie == "1")
             {
-                wynik = liczba1 + liczba2;
+                int wynik = liczba1 + liczba2;
+                Console.WriteLine($"Wynik dzialania to: {wynik}");
             }
             else if (dzialanie == "2")
             {
-                wynik = liczba1 - liczba2;
+                int wynik = liczba1 - liczba2;
+                Console.WriteLine($"Wynik dzialania to: {wynik}");
             }
             else if (dzialanie == "3")
             {
-                wynik = liczba1 * liczba2;
+                int wynik = liczba1 * liczba2;
+                Console.WriteLine($"Wynik dzialania to: {wynik}");
             }
             else if (dzialanie == "4")
             {
 
                 if (liczba2 != 0)
                 {
-                    wynik = liczba1 / liczba2;
+                    double wynik = (double) liczba1 / liczba2;
+                    Console.WriteLine($"Wynik dzialania to: {wynik}");
                 }
                 else
                 {
@@ -66,17 +66,16 @@ class Program
             }
             else if (dzialanie == "5")
             {
+                Console.WriteLine("Koniec programu");
                 break;
+
             }
             else
             {
                 Console.WriteLine("Niepoprawne dzialanie");
                 continue;
             }
-
-
-            Console.WriteLine($"Wynik dzialania to: {wynik}");
-        
+                                            
         }
         
     }
