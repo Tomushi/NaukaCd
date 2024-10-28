@@ -11,68 +11,69 @@ class Program
     {
         Console.WriteLine("Cwiczenia");
 
-        Console.WriteLine("Podaj numer miesiaca: ");
-        int numerMiesiaca = int.Parse(Console.ReadLine());
+        Console.WriteLine("Napisz nazwe miesiaca: ");
 
-        string nazwaMiesiaca = "";
+        string? miesiac = Console.ReadLine();
 
-        switch (numerMiesiaca)
+        int numerMiesiaca;
+
+        switch (miesiac)
         {
-            case 1:
-                nazwaMiesiaca = "Styczen";
+            case "Styczen":
+                numerMiesiaca = 1;
                 break;
 
-            case 2:
-                nazwaMiesiaca = "Luty";
+            case "Luty":
+                numerMiesiaca = 2;
                 break;
 
-            case 3:
-                nazwaMiesiaca = "Marzec";
+            case "Marzec":
+                numerMiesiaca = 3;
                 break;
 
-            case 4:
-                nazwaMiesiaca = "Kwiecien";
+            case "Kwiecien":
+                numerMiesiaca = 4;
                 break;
 
-            case 5:
-                nazwaMiesiaca = "Maj";
+            case "Maj":
+                numerMiesiaca = 5;
                 break;
 
-            case 6:
-                nazwaMiesiaca = "Czerwiec";
+            case "Czerwiec":
+                numerMiesiaca = 6;
                 break;
 
-            case 7:
-                nazwaMiesiaca = "Lipiec";
+            case "Lipiec":
+                numerMiesiaca = 7;
                 break;
 
-            case 8:
-                nazwaMiesiaca = "Sierpien";
+            case "Sierpien":
+                numerMiesiaca = 8;
                 break;
 
-            case 9:
-                nazwaMiesiaca = "Wrzesien";
+            case "Wrzesien":
+                numerMiesiaca = 9;
                 break;
 
-            case 10:
-                nazwaMiesiaca = "Pazdziernik";
+            case "Pazdziernik":
+                numerMiesiaca = 10;
                 break;
 
-            case 11:
-                nazwaMiesiaca = "Listopad";
+            case "listopad":
+                numerMiesiaca = 11;
                 break;
 
-            case 12:
-                nazwaMiesiaca = "Grudzien";
+            case "Grudzien":
+                numerMiesiaca = 12;
                 break;
 
             default:
-                nazwaMiesiaca = "Nie ma takkiego miesiaca";
-                break;
+                Console.WriteLine ("Nie ma takiego miesiaca");
+                return;
 
         }
 
-        Console.WriteLine("Podany miesiac to: " + nazwaMiesiaca);
+        Console.WriteLine($"Numer miesiaca to: " + numerMiesiaca);
     
     }
 }
