@@ -12,8 +12,8 @@ class Program
         Console.WriteLine("Podaj wyraz a ja sprawdze czy jest to palindrom");
 
         string? wyraz = Console.ReadLine();
-        
-        wyraz = wyraz?.Replace(" ", "").ToLower();
+
+        wyraz = wyraz?.Replace(" ", "").ToLower()??"";
         
         char[] charArray = wyraz.ToCharArray();
 
