@@ -9,25 +9,30 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Podaj wyraz a ja sprawdze czy jest to palindrom");
+        Console.WriteLine("Napisz zdanie a ja policze ile jest w nim danego znaku");
 
-        string? wyraz = Console.ReadLine();
+        string zdanie = Console.ReadLine();
 
-        wyraz = wyraz?.Replace(" ", "").ToLower()??"";
-        
-        char[] charArray = wyraz.ToCharArray();
+        Console.WriteLine("Podaj znak ktory chcesz policzyc");
 
-        Array.Reverse(charArray);
+        char znak = Console.ReadKey().KeyChar;
 
-        string odwroconyWyraz = new string(charArray);
+        Console.WriteLine();
+               
+        Console.WriteLine("W podanym zdaniu jest " + policzZnaki(zdanie, znak) + " znakow " + znak);
+    }
 
-        if (wyraz == odwroconyWyraz)
+    static int policzZnaki(string zdanie, char znak)
+    {
+        int licznik = 0;
+
+        foreach (char l in zdanie)
         {
-            Console.WriteLine("Masz Palindroma");
+            if (l == znak)
+            { 
+                licznik++;
+            }
         }
-        else
-        {
-            Console.WriteLine("To nie jest Palindrom");
-        }
+        return licznik;
     }
 }
