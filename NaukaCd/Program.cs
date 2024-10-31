@@ -8,31 +8,36 @@ namespace cwiczenia;
 class Program
 {
     static void Main(string[] args)
+
     {
-        Console.WriteLine("Napisz zdanie a ja policze ile jest w nim danego znaku");
+        Console.WriteLine("Napisz zdanie a ja policze ilosc slow w nim zawartych");
 
         string zdanie = Console.ReadLine();
 
-        Console.WriteLine("Podaj znak ktory chcesz policzyc");
-
-        char znak = Console.ReadKey().KeyChar;
+        Console.WriteLine("Ilosc slow w zdaniu to: " + CountWords(zdanie));
 
         Console.WriteLine();
-               
-        Console.WriteLine("W podanym zdaniu jest " + policzZnaki(zdanie, znak) + " znakow " + znak);
+
+        Console.WriteLine("Nacisnij dowolny klawisz aby zakonczyc");
     }
 
-    static int policzZnaki(string zdanie, char znak)
+    static int CountWords(string zdanie)
     {
-        int licznik = 0;
+        int iloscSlow = 0;
+        int index = 0;
 
-        foreach (char l in zdanie)
+        while (index < zdanie.Length)
         {
-            if (l == znak)
-            { 
-                licznik++;
-            }
+            while (index < zdanie.Length && Char.IsWhiteSpace(zdanie[index]) == true)
+                index++;
+
+            if (index < zdanie.Length)
+                iloscSlow++;
+
+            while (index < zdanie.Length && Char.IsWhiteSpace(zdanie[index]) == false)
+                index++;
         }
-        return licznik;
+
+        return iloscSlow;
     }
 }
