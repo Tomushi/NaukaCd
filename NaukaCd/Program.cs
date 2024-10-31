@@ -12,32 +12,21 @@ class Program
     {
         Console.WriteLine("Napisz zdanie a ja policze ilosc slow w nim zawartych");
 
-        string zdanie = Console.ReadLine();
+        string zdanie = Console.ReadLine() ?? "";
 
         Console.WriteLine("Ilosc slow w zdaniu to: " + CountWords(zdanie));
 
         Console.WriteLine();
 
         Console.WriteLine("Nacisnij dowolny klawisz aby zakonczyc");
+
+        Console.ReadKey();
     }
 
     static int CountWords(string zdanie)
     {
-        int iloscSlow = 0;
-        int index = 0;
+        string[] slowa = zdanie.Split(new char[] { ' ', '.', ',', '!', '?' }, StringSplitOptions.RemoveEmptyEntries);
 
-        while (index < zdanie.Length)
-        {
-            while (index < zdanie.Length && Char.IsWhiteSpace(zdanie[index]) == true)
-                index++;
-
-            if (index < zdanie.Length)
-                iloscSlow++;
-
-            while (index < zdanie.Length && Char.IsWhiteSpace(zdanie[index]) == false)
-                index++;
-        }
-
-        return iloscSlow;
+        return slowa.Length;
     }
 }
