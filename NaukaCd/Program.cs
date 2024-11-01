@@ -10,23 +10,29 @@ class Program
     static void Main(string[] args)
 
     {
-        Console.WriteLine("Napisz zdanie a ja policze ilosc slow w nim zawartych");
+        Console.WriteLine("Podaj swoj wiek, sprawdze czy mozesz glosowac");
 
-        string zdanie = Console.ReadLine() ?? "";
+        Console.WriteLine("Ile masz lat");
+               
+        int.TryParse(Console.ReadLine(), out int wiek);
+        
+        Console.WriteLine("Czy jestes obywatelem Polski? (tak/nie)");               
 
-        Console.WriteLine("Ilosc slow w zdaniu to: " + CountWords(zdanie));
+        string odpowiedz = Console.ReadLine()?.ToLower();
 
-        Console.WriteLine();
+        bool jestObywatelem = odpowiedz == "tak";
 
-        Console.WriteLine("Nacisnij dowolny klawisz aby zakonczyc");
-
-        Console.ReadKey();
-    }
-
-    static int CountWords(string zdanie)
-    {
-        string[] slowa = zdanie.Split(new char[] { ' ', '.', ',', '!', '?' }, StringSplitOptions.RemoveEmptyEntries);
-
-        return slowa.Length;
+        if (wiek >= 18 && jestObywatelem)
+        {
+            Console.WriteLine("Mozesz glosowac");
+        }
+        else if (wiek < 18 || !jestObywatelem)
+        {
+            Console.WriteLine("Nie mozesz glosowac");
+        }
+        else
+        {
+            Console.WriteLine("Niepoprawne dane");
+        }
     }
 }
