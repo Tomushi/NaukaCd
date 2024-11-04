@@ -32,7 +32,7 @@ class Program
     }
     static string? SprawdzHaslo(string? haslo)
     {
-        if (haslo == null)
+        if (string.IsNullOrWhiteSpace(haslo))
         {
             return "Haslo nie moze byc puste";
         }
@@ -67,11 +67,7 @@ class Program
         {
             bledy.Add("Haslo nie moze zawierac znakow specjalnych");
         }
-        if (haslo.Contains(' '))
-        {
-            bledy.Add("Haslo nie moze zawierac spacji");
-        }
-
+               
         return bledy.Count == 0 ? null : string.Join(Environment.NewLine, bledy);
     }
 
