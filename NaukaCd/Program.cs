@@ -10,50 +10,69 @@ class Program
     static void Main(string[] args)
 
     {
-        Console.WriteLine("Podaj trzy liczby calkowite.");
-
-        Console.WriteLine("Podaj pierwsza liczbe: ");
-
-        int a = int.Parse(Console.ReadLine());
-
-        Console.WriteLine("Podaj druga liczbe: ");
-
-        int b = int.Parse(Console.ReadLine());
-
-        Console.WriteLine("Podaj trzecia liczbe: ");
-
-        int c = int.Parse(Console.ReadLine());
-
-        if (a > 10 && b > 10 && c> 10)
-        { 
-            Console.WriteLine(" Wszystkie liczby sa wieksze od 10. Odpowiedz: TAK");
-        }
-        else
+        while (true)
         {
-            Console.WriteLine("Wszystkie liczby sa wieksze od 10. Odpowiedz: NIE");
-        }
-        if (a < 5 &&  b < 5 && c < 5)
-        {
-            Console.WriteLine("Jest liczba wieksza od 5.Odpowiedz: TAK");
-        }
-        else
-        {
-            Console.WriteLine("Jest liczba mniejsze od 5. Odpowiedz: NIE");
-        }
-        int licznikWiekszychOd20 = 0;
+            Console.WriteLine("Wpisz haslo: ");
 
-        if (a > 20) licznikWiekszychOd20++;
-        if (b > 20) licznikWiekszychOd20++;
-        if (c > 20) licznikWiekszychOd20++;
-        if (licznikWiekszychOd20 == 1)
+            string? haslo = Console.ReadLine();
 
-        {
-            Console.WriteLine("Tylko jedna liczba jest wieksza od 20. Odpowiedz: TAK");
+            string? wynik = SprawdzHaslo(haslo);
+            
+            if (wynik == null)
+            {
+                Console.WriteLine("Haslo jest poprawne");
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Haslo nie spelnia wymagan.");                
+                Console.WriteLine(wynik);
+            }
         }
-        else
-        {
-            Console.WriteLine("Tylko jedna liczba jest wieksza od 20. Odpowiedz: NIE");
-        }
-
     }
+    static string? SprawdzHaslo(string? haslo)
+    {
+        if (haslo == null)
+        {
+            return "Haslo nie moze byc puste";
+        }
+
+        var bledy = new List<string>();
+
+        if (haslo.Length < 8)
+        {
+            bledy.Add("Haslo musi miec przynajmniej 8 znakow");
+        }
+        if (!haslo.Any(char.IsDigit))
+        {
+            bledy.Add("Haslo musi zawierac przynajmniej jedna cyfre");
+        }
+        if (!haslo.Any(char.IsLower))
+        {
+            bledy.Add("Haslo musi zawierac przynajmniej jedna mala litere");
+        }
+        if (!haslo.Any(char.IsUpper))
+        { 
+            bledy.Add("Haslo musi zawierac przynajmniej jedna duza litere");
+        }
+        if (haslo.Any(char.IsWhiteSpace))
+        {
+            bledy.Add("Haslo nie moze zawierac spacji");
+        }
+        if (haslo.Any(char.IsPunctuation))
+        {
+            bledy.Add("Haslo nie moze zawierac znakow interpunkcyjnych");
+        }
+        if (haslo.Any(char.IsSymbol))
+        {
+            bledy.Add("Haslo nie moze zawierac znakow specjalnych");
+        }
+        if (haslo.Contains(' '))
+        {
+            bledy.Add("Haslo nie moze zawierac spacji");
+        }
+
+        return bledy.Count == 0 ? null : string.Join(Environment.NewLine, bledy);
+    }
+
 }
