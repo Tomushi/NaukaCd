@@ -8,67 +8,18 @@ namespace cwiczenia;
 class Program
 {
     static void Main(string[] args)
-
     {
-        while (true)
+        for (int a = 0; a < 10; a++)
         {
-            Console.WriteLine("Wpisz haslo: ");
-
-            string? haslo = Console.ReadLine();
-
-            string? wynik = SprawdzHaslo(haslo);
-            
-            if (wynik == null)
+            if (a == 5)
             {
-                Console.WriteLine("Haslo jest poprawne");
-                break;
+                goto Found;
             }
-            else
-            {
-                Console.WriteLine("Haslo nie spelnia wymagan.");                
-                Console.WriteLine(wynik);
-            }
+            Console.WriteLine("Liczba ma wartosc " + a);
         }
+
+        Found:
+        Console.WriteLine("Znaleziono liczbe 5");
     }
-    static string? SprawdzHaslo(string? haslo)
-    {
-        if (string.IsNullOrWhiteSpace(haslo))
-        {
-            return "Haslo nie moze byc puste";
-        }
-
-        var bledy = new List<string>();
-
-        if (haslo.Length < 8)
-        {
-            bledy.Add("Haslo musi miec przynajmniej 8 znakow");
-        }
-        if (!haslo.Any(char.IsDigit))
-        {
-            bledy.Add("Haslo musi zawierac przynajmniej jedna cyfre");
-        }
-        if (!haslo.Any(char.IsLower))
-        {
-            bledy.Add("Haslo musi zawierac przynajmniej jedna mala litere");
-        }
-        if (!haslo.Any(char.IsUpper))
-        { 
-            bledy.Add("Haslo musi zawierac przynajmniej jedna duza litere");
-        }
-        if (haslo.Any(char.IsWhiteSpace))
-        {
-            bledy.Add("Haslo nie moze zawierac spacji");
-        }
-        if (haslo.Any(char.IsPunctuation))
-        {
-            bledy.Add("Haslo nie moze zawierac znakow interpunkcyjnych");
-        }
-        if (haslo.Any(char.IsSymbol))
-        {
-            bledy.Add("Haslo nie moze zawierac znakow specjalnych");
-        }
-               
-        return bledy.Count == 0 ? null : string.Join(Environment.NewLine, bledy);
-    }
-
+    
 }
